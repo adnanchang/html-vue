@@ -33,7 +33,9 @@ export default {
   mounted: function(){
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-    this.vars.canvas = new Test(ctx);
+    var x = 0;
+    var y = 0;
+    this.vars.canvas = new Test(x, y, ctx);
 
 
   }

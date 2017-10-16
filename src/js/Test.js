@@ -1,8 +1,12 @@
 
 export default class Test {
-  constructor(ctx) {
+  constructor(x, y, ctx) {
     this.ctx = ctx;
+    this.x = x;
+    this.y = y;
     console.log(ctx.canvas);
+    console.log("X Coordinate " + x);
+    console.log("Y Coordinate " + y);
 
     ctx.canvas.width = window.innerWidth;
     ctx.canvas.height = window.innerHeight;
@@ -10,7 +14,10 @@ export default class Test {
     this.drawLine();
     this.drawRecOrSquare();
     this.drawArc();
-    this.drawMultipleCircles();
+    //this.drawMultipleCircles();
+
+    this.x = 200;
+    this.animate();
   }
 
   //Line
@@ -32,7 +39,7 @@ export default class Test {
   //Arc OR Circle
   drawArc(){
     this.ctx.beginPath(); //Needed to start a new path else will connect to another line/shape
-    this.ctx.arc(300,300,30,0,Math.PI * 2, false);
+    this.ctx.arc(300, 300, 30, 0, Math.PI * 2, false);
     this.ctx.strokeStyle = "#0055F3"
     this.ctx.stroke();
   }
@@ -60,6 +67,21 @@ getRandomColor() {
     return color;
   }
 
+  //Circle
+  drawCircle(x) {
+    this.ctx.beginPath(); //Needed to start a new path else will connect to another line/shape
+    this.ctx.arc(x, 300, 30, 0, Math.PI * 2, false);
+    this.ctx.strokeStyle = "#0055F3"
+    this.ctx.stroke();
+
+    x += 1;
+  }
+
+  // Animation Time!
+  animate() {
+    requestAnimationFrame(this.animate);
+    this.drawCircle(this.x);
+  }
 }
 
 
