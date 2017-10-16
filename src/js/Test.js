@@ -13,7 +13,7 @@ export default class Test {
 
     this.drawLine();
     this.drawRecOrSquare();
-    this.drawArc();
+    //this.drawArc();
     //this.drawMultipleCircles();
 
     this.x = 200;
@@ -73,14 +73,13 @@ getRandomColor() {
     this.ctx.arc(x, 300, 30, 0, Math.PI * 2, false);
     this.ctx.strokeStyle = "#0055F3"
     this.ctx.stroke();
-
-    x += 1;
   }
 
   // Animation Time!
   animate() {
-    requestAnimationFrame(this.animate);
+    requestAnimationFrame(this.animate.bind(this));
     this.drawCircle(this.x);
+    this.x += 1;
   }
 }
 
