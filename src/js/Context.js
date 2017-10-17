@@ -1,22 +1,14 @@
+import Circle from "./Circle.js"
 
-export default class Test {
-  constructor(x, y, ctx) {
-    this.ctx = ctx;
-    this.x = x;
-    this.y = y;
+export default class Context {
+  constructor(ctx, circleArray) {
+    this.ctx = ctx; //Context
+    this.circleArray = circleArray;
     console.log(ctx.canvas);
-    console.log("X Coordinate " + x);
-    console.log("Y Coordinate " + y);
 
     ctx.canvas.width = window.innerWidth;
     ctx.canvas.height = window.innerHeight;
 
-    this.drawLine();
-    this.drawRecOrSquare();
-    //this.drawArc();
-    //this.drawMultipleCircles();
-
-    this.x = 200;
     this.animate();
   }
 
@@ -67,19 +59,13 @@ getRandomColor() {
     return color;
   }
 
-  //Circle
-  drawCircle(x) {
-    this.ctx.beginPath(); //Needed to start a new path else will connect to another line/shape
-    this.ctx.arc(x, 300, 30, 0, Math.PI * 2, false);
-    this.ctx.strokeStyle = "#0055F3"
-    this.ctx.stroke();
-  }
-
   // Animation Time!
   animate() {
+    this.ctx.clearRect(0, 0, innerWidth, innerHeight);
     requestAnimationFrame(this.animate.bind(this));
-    this.drawCircle(this.x);
-    this.x += 1;
+    // for (var i = 0; i < this.circleArray.length; i++) {
+    //   this.circleArray[i].updateCircle();
+    // }
   }
 }
 
