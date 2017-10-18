@@ -14,7 +14,7 @@ export default class Circle {
         this.ctx.arc(x, y, 30, 0, Math.PI * 2, false);
         this.ctx.strokeStyle = "#0055F3"
         this.ctx.stroke();
-        this.ctx.fillStyle= this.getRandomColor();
+        // this.ctx.fillStyle= this.getRandomColor();
         this.ctx.fill();
     }
 
@@ -22,7 +22,7 @@ export default class Circle {
         if (this.x + this.radius > innerWidth || this.x - this.radius < 0) {
             this.dx = -this.dx;
         }
-    
+
         if (this.y + this.radius > innerHeight || this.y - this.radius < 0) {
           this.dy = -this.dy;
       }

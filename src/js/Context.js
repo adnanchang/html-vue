@@ -63,9 +63,9 @@ getRandomColor() {
   animate() {
     this.ctx.clearRect(0, 0, innerWidth, innerHeight);
     requestAnimationFrame(this.animate.bind(this));
-    // for (var i = 0; i < this.circleArray.length; i++) {
-    //   this.circleArray[i].updateCircle();
-    // }
+    for (var i = 0; i < this.circleArray.length; i++) {
+      this.circleArray[i].updateCircle();
+    }
   }
 }
 
