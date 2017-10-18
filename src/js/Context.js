@@ -1,15 +1,30 @@
 import Circle from "./Circle.js"
 
 export default class Context {
-  constructor(ctx, circleArray) {
+  constructor(ctx) {
     this.ctx = ctx; //Context
-    this.circleArray = circleArray;
     console.log(ctx.canvas);
 
     ctx.canvas.width = window.innerWidth;
     ctx.canvas.height = window.innerHeight;
 
+    this.mouse = {
+      x: undefined,
+      y: undefined
+    }
+
+    this.circleArray = [];
+    for (var i = 0; i < 500; i++) {
+      var radius = 30;
+      var x = Math.random() * (innerWidth - radius * 2) + radius;
+      var y = Math.random() * (innerHeight - radius * 2) + radius;
+      var dx = (Math.random() - 0.5) * 3;
+      var dy = (Math.random() - 0.5) * 3;
+      this.circleArray.push(new Circle(x, y, dx, dy, radius, ctx, this.mouse));
+    }
+
     this.animate();
+    this.mouseMove();
   }
 
   //Line
@@ -66,6 +81,15 @@ getRandomColor() {
     for (var i = 0; i < this.circleArray.length; i++) {
       this.circleArray[i].updateCircle();
     }
+  }
+
+  // Move Mouse! 
+  mouseMove() {
+    var mouse = this.mouse;
+    window.addEventListener('mousemove', function(event) {
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
+    });
   }
 }
 

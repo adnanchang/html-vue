@@ -34,18 +34,7 @@ export default {
   mounted: function(){
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-
-    var circleArray = [];
-
-    for (var i = 0; i < 500; i++) {
-      var radius = 30;
-      var x = Math.random() * (innerWidth - radius * 2) + radius;
-      var y = Math.random() * (innerHeight - radius * 2) + radius;
-      var dx = (Math.random() - 0.5) * 3;
-      var dy = (Math.random() - 0.5) * 3;
-      circleArray.push(new Circle(x, y, dx, dy, radius, ctx));
-    }
-    this.vars.canvas = new Context(ctx, circleArray);
+    this.vars.canvas = new Context(ctx);
   }
 }
 </script>

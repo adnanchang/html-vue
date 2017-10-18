@@ -1,17 +1,18 @@
 export default class Circle {
-    constructor(x, y, dx, dy, radius, ctx){
+    constructor(x, y, dx, dy, radius, ctx, mouse){
         this.x = x; // X Coordinate
         this.y = y; // Y Coordinate
         this.dx = dx; //Velocity of shapes moving X Axis
         this.dy = dy; //Velocity of shapes moving Y Axis
         this.radius = radius; //Radius of the circle
         this.ctx = ctx;
+        this.mouse = mouse;
     }
 
     //Circle
     drawCircle(x, y) {
         this.ctx.beginPath(); //Needed to start a new path else will connect to another line/shape
-        this.ctx.arc(x, y, 30, 0, Math.PI * 2, false);
+        this.ctx.arc(x, y, this.radius, 0, Math.PI * 2, false);
         this.ctx.strokeStyle = "#0055F3"
         this.ctx.stroke();
         // this.ctx.fillStyle= this.getRandomColor();
@@ -28,6 +29,10 @@ export default class Circle {
       }
         this.x += this.dx;
         this.y += this.dy;
+
+        if (this.mouse.x - this.x < 50 && this.mouse.x - this.x > -50){
+            this.radius += 1;
+        }
 
         this.drawCircle(this.x, this.y);
     }
