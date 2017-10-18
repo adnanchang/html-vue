@@ -30,8 +30,14 @@ export default class Circle {
         this.x += this.dx;
         this.y += this.dy;
 
-        if (this.mouse.x - this.x < 50 && this.mouse.x - this.x > -50){
-            this.radius += 1;
+        if (this.mouse.x - this.x < 100 && this.mouse.x - this.x > -100
+            && this.mouse.y - this.y < 100 && this.mouse.y - this.y > -100){
+            if (this.radius < 40){
+                this.radius += 1;
+            }
+        }
+        else if (this.radius > 2) {
+            this.radius -= 1;
         }
 
         this.drawCircle(this.x, this.y);
