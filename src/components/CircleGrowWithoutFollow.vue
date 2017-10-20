@@ -1,7 +1,7 @@
 <template>
   <div class="test">
-    <h1>{{ msg }}</h1>
-    <p>{{firstName}} {{lastName}}</p>
+    <!-- <h1>{{ msg }}</h1>
+    <p>{{firstName}} {{lastName}}</p> -->
 
     <canvas id="canvas">
 
@@ -42,7 +42,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 canvas {
-  border: 1px solid black;
+  /* border-top: 1px solid #eedfcc; */
+  margin-top: 10px;
 }
 
 h1, h2 {

@@ -1,20 +1,22 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png">
-    <hello-world/> -->
-    <test/>
+    <!-- <img src="./assets/logo.png"> -->
+    <!-- <hello-world/> -->
+    <!-- <test/> -->
+    <router-link to="/">Home</router-link>
+    <router-link to="/normalCircle">Normal Circles</router-link>
+    <router-link to="/cgwof">Growing Circles</router-link>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
-import Test from './components/Test'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld,
-    Test
+    HelloWorld
   }
 }
 </script>
@@ -26,6 +28,10 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 25px; */
+}
+
+a {
+  color: #42b983;
 }
 </style>

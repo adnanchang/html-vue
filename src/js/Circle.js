@@ -19,19 +19,19 @@ export default class Circle {
         this.ctx.fill();
     }
 
-    updateCircle(){
+    updateCircle() {
         if (this.x + this.radius > innerWidth || this.x - this.radius < 0) {
             this.dx = -this.dx;
         }
 
         if (this.y + this.radius > innerHeight || this.y - this.radius < 0) {
           this.dy = -this.dy;
-      }
+        }
         this.x += this.dx;
         this.y += this.dy;
 
         if (this.mouse.x - this.x < 100 && this.mouse.x - this.x > -100
-            && this.mouse.y - this.y < 100 && this.mouse.y - this.y > -100){
+            && this.mouse.y - this.y < 100 && this.mouse.y - this.y > -100) {
             if (this.radius < 40){
                 this.radius += 1;
             }

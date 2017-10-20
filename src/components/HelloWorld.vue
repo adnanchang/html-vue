@@ -1,5 +1,6 @@
 <template>
   <div class="hello">
+    <img src="./../assets/logo.png">
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -17,6 +18,10 @@
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
+    <h3>HTML Cavnas Examples</h3>
+    <ul>
+      <li><router-link to="/normalCircle">Dive into the Canvas</router-link></li>
+    </ul>
   </div>
 </template>
 
@@ -30,6 +35,7 @@ export default {
   }
 }
 </script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
