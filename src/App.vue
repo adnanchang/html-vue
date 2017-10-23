@@ -6,6 +6,7 @@
     <router-link to="/">Home</router-link>
     <router-link to="/normalCircle">Normal Circles</router-link>
     <router-link to="/cgwof">Growing Circles</router-link>
+    <router-link to="/cgwf">Growing Circles - Follow</router-link>
     <router-view></router-view>
   </div>
 </template>

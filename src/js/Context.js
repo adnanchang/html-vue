@@ -14,7 +14,7 @@ export default class Context {
     }
 
     this.circleArray = [];
-    for (var i = 0; i < 500; i++) {
+    for (var i = 0; i < 600; i++) {
       var radius = 30;
       var x = Math.random() * (innerWidth - radius * 2) + radius;
       var y = Math.random() * (innerHeight - radius * 2) + radius;
@@ -83,7 +83,7 @@ getRandomColor() {
     }
   }
 
-  // Move Mouse! 
+  // Move Mouse!
   mouseMove() {
     var mouse = this.mouse;
     window.addEventListener('mousemove', function(event) {
