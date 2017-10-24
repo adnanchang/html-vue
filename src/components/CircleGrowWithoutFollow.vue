@@ -35,6 +35,10 @@ export default {
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
     this.vars.canvas = new Context(ctx);
+  },
+
+  beforeDestroy: function (){
+    this.vars.canvas.stopAll();
   }
 }
 </script>

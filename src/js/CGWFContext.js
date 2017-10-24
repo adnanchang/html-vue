@@ -26,6 +26,12 @@ export default class CGWFContext {
     }
 
     this.doAnimation = true;
+    /*
+    Since we are using bind we have to save it 
+    in a separate variable so we can access
+    the object again
+    */
+    this.handler = this.mouseMoveEventListener.bind(this); 
     this.animate();
     this.mouseMove();
   }
@@ -44,21 +50,20 @@ export default class CGWFContext {
   // Move Mouse!
   mouseMove() {
     var mouse = this.mouse;
-    if (this.doAnimation == true) {
-      console.log("I AM ADDING EVENT LISTENER");
-      window.addEventListener('mousemove', function(event) {
-        mouse.x = event.clientX;
-        mouse.y = event.clientY;
-        console.log("Mouse moved in WITH FOLLOW");
-      });
-    }
+    window.addEventListener('mousemove', this.handler);
   }
 
   // Stop animating and kill the event listener
   stopAll() {
-    window.removeEventListener('mousemove', function (event) {});
+    window.removeEventListener('mousemove', this.handler);
     this.doAnimation = false;
-    console.log("WIHT FOLLOW EVENT REMOVED");
+  }
+
+  // Function for mouseMove to add to Event Listener
+  // An explicit function name is needed to remove it later on
+  mouseMoveEventListener(event){
+    this.mouse.x = event.clientX;
+    this.mouse.y = event.clientY;
   }
 }
 

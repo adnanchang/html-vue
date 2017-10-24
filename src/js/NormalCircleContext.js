@@ -18,16 +18,24 @@ export default class NormalCircleContext {
       this.circleArray.push(new Circle(x, y, dx, dy, radius, ctx, this.mouse));
     }
 
+    this.doAnimation = true;
     this.animate();
   }
 
   // Animation Time!
   animate() {
-    this.ctx.clearRect(0, 0, innerWidth, innerHeight);
-    requestAnimationFrame(this.animate.bind(this));
-    for (var i = 0; i < this.circleArray.length; i++) {
-      this.circleArray[i].updateCircle();
+    if (this.doAnimation == true) {
+      this.ctx.clearRect(0, 0, innerWidth, innerHeight);
+      requestAnimationFrame(this.animate.bind(this));
+      for (var i = 0; i < this.circleArray.length; i++) {
+        this.circleArray[i].updateCircle();
+      }
     }
+  }
+
+  // Stop animating and kill the event listener
+  stopAll() {
+    this.doAnimation = false;
   }
 }
 
