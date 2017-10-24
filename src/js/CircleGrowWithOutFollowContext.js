@@ -1,6 +1,6 @@
-import Circle from "./Circle.js"
+import CircleGrowWithOutFollow from "./CircleGrowWithOutFollow.js"
 
-export default class Context {
+export default class CircleGrowWithOutFollowContext {
   constructor(ctx) {
     this.ctx = ctx; //Context
     console.log(ctx.canvas);
@@ -20,7 +20,7 @@ export default class Context {
       var y = Math.random() * (innerHeight - radius * 2) + radius;
       var dx = (Math.random() - 0.5) * 3;
       var dy = (Math.random() - 0.5) * 3;
-      this.circleArray.push(new Circle(x, y, dx, dy, radius, ctx, this.mouse));
+      this.circleArray.push(new CircleGrowWithOutFollow(x, y, dx, dy, radius, ctx, this.mouse));
     }
 
     this.doAnimation = true;

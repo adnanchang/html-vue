@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import Context from "./../js/Context.js"
-import Circle from "./../js/Circle.js"
+import CircleGrowWithOutFollowContext from "./../js/CircleGrowWithOutFollowContext.js"
+import CircleGrowWithOutFollow from "./../js/CircleGrowWithOutFollow.js"
 
 export default {
   name: 'Context',
@@ -34,7 +34,7 @@ export default {
   mounted: function(){
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-    this.vars.canvas = new Context(ctx);
+    this.vars.canvas = new CircleGrowWithOutFollowContext(ctx);
   },
 
   beforeDestroy: function (){

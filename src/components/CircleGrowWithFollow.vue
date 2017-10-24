@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import CGWFContext from "./../js/CGWFContext"
+import CircleGrowWithFollowContext from "./../js/CircleGrowWithFollowContext"
 import CircleGrowWithFollow from "./../js/CircleGrowWithFollow.js"
 
 export default {
@@ -34,7 +34,7 @@ export default {
   mounted: function(){
     var canvas = document.getElementById("canvas");
     var ctx = canvas.getContext("2d");
-    this.vars.canvas = new CGWFContext(ctx);
+    this.vars.canvas = new CircleGrowWithFollowContext(ctx);
   },
 
   beforeDestroy: function (){

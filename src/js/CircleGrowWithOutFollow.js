@@ -1,4 +1,4 @@
-export default class Circle {
+export default class CircleGrowWithOutFollow {
     constructor(x, y, dx, dy, radius, ctx, mouse){
         this.x = x; // X Coordinate
         this.y = y; // Y Coordinate

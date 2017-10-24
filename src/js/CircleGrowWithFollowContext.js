@@ -1,6 +1,6 @@
 import CircleGrowWithFollow from './CircleGrowWithFollow'
 
-export default class CGWFContext {
+export default class CircleGrowWithFollowContext {
   constructor(ctx) {
     this.ctx = ctx; //Context
     console.log(ctx.canvas);
