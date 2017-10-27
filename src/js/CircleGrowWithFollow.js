@@ -1,5 +1,5 @@
 export default class CircleGrowWithFollow {
-  constructor(x, y, dx, dy, radius, minRadius, maxRadius, ctx, mouse){
+  constructor(x, y, dx, dy, radius, minRadius, maxRadius, color, ctx, mouse){
       this.x = x; // X Coordinate
       this.y = y; // Y Coordinate
       this.dx = dx; //Velocity of shapes moving X Axis
@@ -7,18 +7,19 @@ export default class CircleGrowWithFollow {
       this.radius = radius; //Radius of the circle
       this.minRadius = minRadius;
       this.maxRadius = maxRadius;
+      this.color = color;
       this.ctx = ctx;
       this.mouse = mouse;
   }
 
   //Circle
   drawCircle(x, y) {
-      this.ctx.beginPath(); //Needed to start a new path else will connect to another line/shape
-      this.ctx.arc(x, y, this.radius, 0, Math.PI * 2, false);
-      this.ctx.strokeStyle = "#0055F3"
-      this.ctx.stroke();
-      // this.ctx.fillStyle= this.getRandomColor();
-      this.ctx.fill();
+    this.ctx.beginPath(); //Needed to start a new path else will connect to another line/shape
+    this.ctx.arc(x, y, this.radius, 0, Math.PI * 2, false);
+    // this.ctx.strokeStyle = "#0055F3"
+    // this.ctx.stroke();
+    this.ctx.fillStyle = this.color;
+    this.ctx.fill();
   }
 
   updateCircle() {

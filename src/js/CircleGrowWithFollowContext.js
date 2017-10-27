@@ -14,15 +14,24 @@ export default class CircleGrowWithFollowContext {
     }
 
     this.circleArray = [];
+    
+    var colorArray = [
+      this.getRandomColor(),
+      this.getRandomColor(),
+      this.getRandomColor(),
+      this.getRandomColor(),
+      this.getRandomColor()
+    ];
     for (var i = 0; i < 500; i++) {
-      var radius = 30;
-      var minRadius = 2;
+      var radius = Math.random() * 5 + 1;
+      var minRadius = radius;
       var maxRadius = 40;
+      var color = colorArray[Math.floor(Math.random() * colorArray.length)];
       var x = Math.random() * (innerWidth - radius * 2) + radius;
       var y = Math.random() * (innerHeight - radius * 2) + radius;
       var dx = (Math.random() - 0.5) * 3;
       var dy = (Math.random() - 0.5) * 3;
-      this.circleArray.push(new CircleGrowWithFollow(x, y, dx, dy, radius, minRadius, maxRadius, ctx, this.mouse));
+      this.circleArray.push(new CircleGrowWithFollow(x, y, dx, dy, radius, minRadius, maxRadius, color, ctx, this.mouse));
     }
 
     this.doAnimation = true;
@@ -64,6 +73,16 @@ export default class CircleGrowWithFollowContext {
   mouseMoveEventListener(event){
     this.mouse.x = event.clientX;
     this.mouse.y = event.clientY;
+  }
+
+  //Get random Hex color
+  getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
   }
 }
 

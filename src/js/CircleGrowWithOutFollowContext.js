@@ -72,7 +72,7 @@ export default class CircleGrowWithOutFollowContext {
   }
 
   //Get random Hex color
-getRandomColor() {
+  getRandomColor() {
     var letters = '0123456789ABCDEF';
     var color = '#';
     for (var i = 0; i < 6; i++) {

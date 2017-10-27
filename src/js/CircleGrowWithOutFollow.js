@@ -13,8 +13,8 @@ export default class CircleGrowWithOutFollow {
     drawCircle(x, y) {
         this.ctx.beginPath(); //Needed to start a new path else will connect to another line/shape
         this.ctx.arc(x, y, this.radius, 0, Math.PI * 2, false);
-        this.ctx.strokeStyle = "#0055F3"
-        this.ctx.stroke();
+        // this.ctx.strokeStyle = "#0055F3"
+        // this.ctx.stroke();
         // this.ctx.fillStyle= this.getRandomColor();
         this.ctx.fill();
     }
