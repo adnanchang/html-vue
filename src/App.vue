@@ -4,6 +4,7 @@
     <!-- <hello-world/> -->
     <!-- <test/> -->
     <router-link to="/">Home</router-link>
+    <router-link to="/circle">Circle</router-link>
     <router-link to="/normalCircle">Normal Circles</router-link>
     <router-link to="/cgwof">Growing Circles</router-link>
     <router-link to="/cgwf">Growing Circles - Follow</router-link>

@@ -25,11 +25,11 @@ export default class CircleGrowWithOutFollowContext {
 
     this.doAnimation = true;
     /*
-    Since we are using bind we have to save it 
+    Since we are using bind we have to save it
     in a separate variable so we can access
     the object again
     */
-    this.handler = this.mouseMoveEventListener.bind(this); 
+    this.handler = this.mouseMoveEventListener.bind(this);
     this.animate();
     this.mouseMove();
   }
