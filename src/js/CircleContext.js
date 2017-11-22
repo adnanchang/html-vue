@@ -27,6 +27,11 @@ export default class CircleContext {
 
   // Animation Time!
   animate() {
+    //FIRST
+    // this.ctx.clearRect(0, 0, innerWidth, innerHeight);
+    // this.aCircle.drawCircle(100,450);
+
+    //LATER
     this.ctx.clearRect(0, 0, innerWidth, innerHeight);
     this.aCircle.updateCircle();
     requestAnimationFrame(this.animate.bind(this));
